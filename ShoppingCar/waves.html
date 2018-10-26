@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>waves-lab</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+
+    
+function showpage(idpage){
+    //alert(idpage);
+
+    if (idpage==0)
+    {
+        $("#home").show();
+        $("#research").hide();
+        
+        $("#download").hide();
+        $("#contact").hide();
+    }
+    if (idpage==1)
+    {
+        $("#research").show();
+        $("#home").hide();
+        $("#download").hide();
+        $("#contact").hide();
+    }
+    if (idpage==2)
+    {
+        $("#download").show();
+        $("#research").hide();
+        $("#home").hide();
+        
+        $("#contact").hide();
+    }
+
+    if (idpage==3)
+    {
+        $("#contact").show();
+        $("#car").hide();
+        $("#download").hide();
+        $("#home").hide();
+        
+        
+    }
+}
+</script>
+</head>
+<body>
+
+<table width=100%>
+    <tr>
+    <td>
+    <b><a href="#" onclick="showpage(0)">[Home]</a></b>
+    <a href="#" onclick="showpage(1)">[Research]</a>
+    <a href="#" onclick="showpage(2)">[Download]</a>
+    <a href="#" onclick="showpage(3)">[Contact]</a>
+  
+    <td align=right>
+    <a href="mailto:adsoft@live.com.mx"><i>email</i></a>
+    </table>
+    <hr>
+
+<div class="container" id="home">
+    <p>
+    <h3>Welcome to <b>waves-lab</b></h3>
+    <b>High Performance Computing</b></p>
+
+  <p> In waves-lab use the incredible power of GPU's supercomputers to help solve some of 
+      the most complex technical, scientific, and commercial problems that organizations face. 
+  </p>    
+  <p> We expect that parallel computing will lead to breakthroughs in science, engineering, 
+      modeling and simulation, healthcare, deep learning, robotics, bigdata, IoT
+      and blockchain applications.</p>
+
+   <p><b>    Applications </b> </p>
+<p>
+ We are focusing on putting the GPU's computers to work solving industry-scale 
+ classification, machine learning, and optimization problems with our customers 
+ and collaborators. These complex problems exist across many domains such as:
+</p>
+ <ul>
+<li>Deep learning </li> 
+<li>Atomic scale materials modelling</li> 
+<li>Sampling / Monte Carlo</li> 
+<li>Pattern recognition and anomaly detection</li> 
+<li>Blockchain and IA applications</li> 
+<li>Image analysis</li> 
+<li>Bioinformatics / cancer research</li>
+</ul>
+
+</div>
+
+<div class="container" id="research" style="display: none">
+    <h3>Research</h3>
+    Parallel computing with 
+    <a href="https://developer.nvidia.com/">Nvidia CUDA 9.1</a>.<br/>
+    </b>
+    
+    <br/>
+    
+    <b>
+    Deep learning with
+    <a href="https://www.tensorflow.org/">Google Tensorflow GPU version</a>.<br/>
+    </b>
+    
+    <br/>
+    
+    <b>
+    Atomic scale materials modelling
+    <a href="https://www.vasp.at/"> VASP</a>.</p>
+    </b>
+    
+
+</div>
+
+  <div class="container" id="download" style="display: none">
+    <h3>Downloads </h3>
+    
+    CUDA Material : <br/> 
+    <a href="cuda_by_example.pdf"> CUDA beginner book </a> <br/>
+    <a href="programming_parallel.pdf"> CUDA parallel programming book </a> <br/>
+    
+    <br/>
+    
+    
+    Tensorflow Material : <br/>
+    <a href="getstartedtensorf.pdf">Tensorflow beginner book</a> <br/>
+    
+    <br/>
+    
+
+Quick tutorial on common line tools for linux
+<a href="/unixtut/index.html"> here </a>
+<br/>
+Linux networking book
+<a href="linuxnet.pdf"> here </a>
+    
+
+    </div>
+
+  <div class="container" id="contact" style="display: none">
+    <h3>Contact</h3>
+    <p>Students and researchers interested in GPU parallel programming can apply for 
+        a waves-lab account.</p> 
+        Please send a mail to  <a href="mailto:adsoft@live.com.mx"><i>adsoft</i></a> with a brief description of your project
+        <br></br>
+         <p>You can enter with: <br/><br/>ssh myuser@waves-lab.ddns.net</p>
+  </div>
+
+  <br><br>
+  <small><center><i>
+  Powered by adsoft, jr, armand & openm.
+  </i><center></small>
+
+</body>
+</html>

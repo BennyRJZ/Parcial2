@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="product in products">
+                    <td class="center">{{ product.codigo }}</td>
+                    <td>{{ product.nombre }}</td>
+                    <td>{{ product.precio }}</td>
+                    <td>{{ product.exist }}</td>
+                    <td>
+                        <a class="btn btn-primary" href="#" role="button">Editar</a>
+                        <a class="btn btn-danger" href="#" @click="deleteProduct(product.id)" role="button">Borrar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>    
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                products: []
+            },
+            computed: {
+                totalProducts() {
+                    return this.products.reduce((sum, product) => {
+                        return sum + product.exist
+                    }, 0)
+                }
+            },
+            created() {
+                fetch('http://localhost:8080/api/products')
+                    .then(response => response.json())
+                    .then(json => {
+                        this.products = json
+                    })
+            },
+            methods:{
+                deleteProduct(id) {
+                    axios.delete(`http://localhost:8080/api/products/${id}`)
+                        .then(response => {
+                            alert('borrado');
+                        });
+                },
+
+                updateProduct() {
+                    
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

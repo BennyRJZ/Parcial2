@@ -1,0 +1,15 @@
+{
+  "name": "hello-vue",
+  "version": "1.0.0",
+  "description": "hello-vue project",
+  "author": "adsoft",
+  "scripts": {
+    "dev": "nodemon app.js --watch server"
+  },
+  "dependencies": {
+    "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

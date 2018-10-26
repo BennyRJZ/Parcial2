@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Shopping Car</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+    
+function showpage(idpage){
+    //alert(idpage);
+
+    if (idpage==0)
+    {
+        $("#home").show();
+        $("#customer").hide();
+        
+        $("#car").hide();
+        $("#payment").hide();
+    }
+    if (idpage==1)
+    {
+        $("#customer").show();
+        $("#home").hide();
+        $("#car").hide();
+        $("#payment").hide();
+    }
+    if (idpage==2)
+    {
+        $("#car").show();
+        $("#customer").hide();
+        $("#home").hide();
+        
+        $("#payment").hide();
+    }
+
+    if (idpage==3)
+    {
+        $("#payment").show();
+        $("#car").hide();
+        $("#customer").hide();
+        $("#home").hide();
+        
+        
+    }
+}
+</script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Shooping Car</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#" onclick="showpage(0)">Home</a></bli>
+      <li><a href="#" onclick="showpage(1)">Customer</a></li>
+      <li><a href="#" onclick="showpage(2)">Car</a></li>
+      <li><a href="#" onclick="showpage(3)">Payment</a></li>
+    </ul>
+  </div>
+</nav>
+  
+<div class="container" id="home">
+  <h3>Home</h3>
+  <p>home here</p>
+</div>
+
+<div class="container" id="customer" style="display: none">
+    <h3>Customer</h3>
+    <p>customer here</p>
+  </div>
+
+  <div class="container" id="car" style="display: none">
+    <h3>Shopping Car</h3>
+    <p>shopping car here</p>
+  </div>
+
+  <div class="container" id="payment" style="display: none">
+    <h3>Payment</h3>
+    <p>Payment here</p>
+  </div>
+</body>
+</html>
